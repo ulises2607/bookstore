@@ -44,10 +44,18 @@ const BooksLogic = () => {
         setBooks([...books, newBook])
     }
 
+    const deleteBookCard = (id) => {
+        setBooks([
+            ...books.filter((book) => {
+                return book.id !== id
+            })
+        ])
+    }
+
     return (
         <div className="books-container">
             <div>
-                <BookList booksProps={books} setBooks= {setBooks}/>
+                <BookList booksProps={books} setBooks= {setBooks} deleteBookCard={deleteBookCard}/>
             </div> 
             <div className="addbook-section">
                 <AddBok addBookCard={addBookCard}/>

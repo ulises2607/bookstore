@@ -1,4 +1,4 @@
-const BookCard = ({bookProp}) => {
+const BookCard = ({bookProp, deleteBookCard}) => {
 
     return (
         <li>
@@ -10,7 +10,7 @@ const BookCard = ({bookProp}) => {
                 </div>
                 <div className="book-manage-section">
                     <button>Comments</button>
-                    <button>Remove</button>
+                    <button onClick={() =>deleteBookCard(bookProp.id)}>Remove</button>
                     <button>Edit</button>
                 </div>
             </div>
