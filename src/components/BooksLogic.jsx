@@ -1,6 +1,7 @@
 import BookList from "./BookList";
 import AddBok from "./AddBook";
 import { useState } from "react";
+import { v4 as uuidv4 } from "uuid";
 
 const BooksLogic = () => {
 
@@ -31,13 +32,25 @@ const BooksLogic = () => {
         }
     ])
 
+    const addBookCard = (title, category) => {
+        const newBook = {
+            id: uuidv4(),
+            title: title,
+            category:category,
+            author: 'Author-example',
+            progress: 0,
+            chapter: '-',
+        };
+        setBooks([...books, newBook])
+    }
+
     return (
         <div className="books-container">
             <div>
                 <BookList booksProps={books} setBooks= {setBooks}/>
             </div> 
             <div className="addbook-section">
-                <AddBok />
+                <AddBok addBookCard={addBookCard}/>
             </div>
         </div>
     )

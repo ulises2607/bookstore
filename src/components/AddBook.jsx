@@ -1,14 +1,19 @@
 import { useState } from "react";
 
-const AddBok = () => {
+const AddBok = ({addBookCard}) => {
     const [title, setTitle] = useState('')
     const [category, setCategory] = useState('')
 
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        console.log(title)
-        console.log(category);
+        if (title.trim()) {
+            addBookCard(title,category);
+            setTitle('');
+            console.log('Added correctly, book; ',title);
+          } else {
+            console.log('Please add item');
+          }
 
     }
 
