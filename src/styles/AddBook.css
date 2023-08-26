@@ -1,0 +1,47 @@
+.addbook-container {
+  padding: 1rem;
+}
+
+.addbook-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  letter-spacing: -0.18px;
+  color: #888;
+}
+
+.form-book {
+  display: flex;
+  justify-content: space-between;
+}
+
+.input-book {
+  width: 40%;
+}
+
+.btn-addbook {
+  cursor: pointer;
+  width: 20%;
+  padding: 12px;
+  border-radius: 3px;
+  background-color: #0290ff;
+  border: none;
+  letter-spacing: 0.5px;
+  color: #fff;
+  font-size: 0.813rem;
+  font-weight: 700;
+  font-family: "Roboto Slab", serif;
+}
+
+.category-input {
+  width: 30%;
+}
+
+input {
+  padding: 12px;
+  border-radius: 4px;
+  border: 1px solid #e8e8e8;
+  background-color: #fff;
+  font-size: 1rem;
+  letter-spacing: -0.15px;
+  color: #121212;
+}
