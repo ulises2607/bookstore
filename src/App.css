@@ -1,3 +1,55 @@
+* {
+  list-style-type: none;
+}
+
+.App {
+  padding: 6rem 3rem;
+  
+}
+
 header {
   display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem;
+  background-color: #fff;
+}
+
+.page-title {
+  color: dodgerblue;
+}
+
+.nav-list {
+  display: flex;
+  gap: 2rem;
+}
+
+.nav-item a {
+  text-decoration: none;
+  color: darkgray;
+
+  &:active {
+    color: #121212;
+  }
+}
+
+.btn-user {
+  cursor: pointer;
+  width: 2rem;
+  height: 2.813rem;
+  border-radius: 50%;
+  border: 1px solid #e8e8e8;
+  background-color: #fff;
+  position:absolute;
+  right: 10%;
+  top: 20%;
+}
+
+.user-icon {
+  color: #0290ff;
+}
+
+section {
+  padding: 1rem;
+  background-color: #fafafa;
 }

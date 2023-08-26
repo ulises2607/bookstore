@@ -1,25 +1,29 @@
+import '../styles/BookCard.css'
+
 const BookCard = ({bookProp, deleteBookCard}) => {
 
     return (
-        <li>
+        <li className='book-item'>
             <div className="book-info-container">
                 <div className="book-info">
-                    <h3>{bookProp.chapter}</h3>
+                    <h3 className='book-category'>{bookProp.category}</h3>
                     <h2>{bookProp.title}</h2>
-                    <span>{bookProp.author}</span>
+                    <span className='book-author'>{bookProp.author}</span>
                 </div>
                 <div className="book-manage-section">
-                    <button>Comments</button>
-                    <button onClick={() =>deleteBookCard(bookProp.id)}>Remove</button>
-                    <button>Edit</button>
+                    <button className='btn-book-manage'>Comments</button>
+                    <button className='btn-book-manage' onClick={() =>deleteBookCard(bookProp.id)}>Remove</button>
+                    <button className='btn-book-manage'>Edit</button>
                 </div>
             </div>
             <div className="book-progress">
-                <div className="progress-completed">
-                    <div className="img-progres">
-                        <span>Imagen</span>
+                <div className="progress-complete">
+                    <div className="img-container">
+                        <div className="img-progress">
+                        </div>
                     </div>
-                    <div>
+                    
+                    <div className='progress-percent'>
                         <span>
                         {bookProp.progress}%
                         </span>

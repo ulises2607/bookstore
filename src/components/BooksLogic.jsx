@@ -12,7 +12,7 @@ const BooksLogic = () => {
             title: 'The Hunger Games',
             author: 'Susane Collins',
             progress: 64,
-            chapter: 17,
+            chapter: 'Chapter 17',
         },
         {
             id: 2,
@@ -20,7 +20,7 @@ const BooksLogic = () => {
             title: 'Dune',
             author: 'Frank Herbert',
             progress: 8,
-            chapter: 3,
+            chapter: 'Chapter 3: "A Lesson Learned"',
         },
         {
             id: 3,
