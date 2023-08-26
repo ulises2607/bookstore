@@ -1,32 +1,32 @@
 import './App.css';
-import {Routes, Route, Link } from 'react-router-dom';
+import { Routes, Route, Link } from 'react-router-dom';
 import BooksLogic from './components/BooksLogic';
-import user from './Assets/Images/image.svg'
+import user from './Assets/Images/image.svg';
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <h1 className='page-title'>Bookstore CMS</h1>
+        <h1 className="page-title">Bookstore CMS</h1>
         <nav>
-          <ul className='nav-list'>
-            <li className='nav-item'><Link to="/">BOOKS</Link></li>
-            <li className='nav-item'><Link to="/categories">CATEGORIES</Link></li>
+          <ul className="nav-list">
+            <li className="nav-item"><Link to="/">BOOKS</Link></li>
+            <li className="nav-item"><Link to="/categories">CATEGORIES</Link></li>
           </ul>
         </nav>
-        <div className='user'>
-          <button className='btn-user'>
-            <img className='user-icon' src={user} />
+        <div className="user">
+          <button type="button" className="btn-user">
+            <img className="user-icon" src={user} alt="User Icon" />
           </button>
         </div>
       </header>
       <section>
         <Routes>
-          <Route path='/' element={<BooksLogic />}/>
-          <Route path='/categories' element={<h1>Under Construction</h1>}/>
+          <Route path="/" element={<BooksLogic />} />
+          <Route path="/categories" element={<h1>Under Construction</h1>} />
         </Routes>
       </section>
-      
+
     </div>
   );
 }
