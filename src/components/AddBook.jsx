@@ -8,7 +8,7 @@ const AddBok = () => {
   const dispatch = useDispatch();
 
   const [title, setTitle] = useState('');
-  const [category, setCategory] = useState('');
+  const [category, setCategory] = useState('Action');
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -18,8 +18,6 @@ const AddBok = () => {
       title,
       category,
       author: 'Author-example',
-      progress: 0,
-      chapter: '-',
     };
 
     if (title.trim()) {
