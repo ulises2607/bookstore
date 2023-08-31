@@ -6,12 +6,12 @@ const initialState = {
 };
 
 const booksSlice = createSlice({
-  name: 'book', // Corregido aquí
+  name: 'book',
   initialState,
   reducers: {
     addBook: (state, action) => {
-      const book = action.payload; // Corregido aquí
-      state.bookItems.push(book); // Corregido aquí
+      const book = action.payload;
+      state.bookItems.push(book); 
     },
     removeBook: (state, action) => {
       const bookId = action.payload;
@@ -20,6 +20,6 @@ const booksSlice = createSlice({
   },
 });
 
-export const { addBook, removeBook } = booksSlice.actions; // Corregido aquí
+export const { addBook, removeBook } = booksSlice.actions;
 
 export default booksSlice.reducer;
