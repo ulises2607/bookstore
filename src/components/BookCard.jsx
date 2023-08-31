@@ -1,56 +1,61 @@
+import { useDispatch } from 'react-redux';
 import '../styles/BookCard.css';
 import PropTypes from 'prop-types';
+import { removeBook } from '../redux/books/booksSlice';
 
-const BookCard = ({ bookProp, deleteBookCard }) => (
-  <li className="book-item">
-    <div className="book-info-container">
-      <div className="book-info">
-        <h3 className="book-category">{bookProp.category}</h3>
-        <h2>{bookProp.title}</h2>
-        <span className="book-author">{bookProp.author}</span>
-      </div>
-      <div className="book-manage-section">
-        <button type="button" className="btn-book-manage">Comments</button>
-        <button type="button" className="btn-book-manage" onClick={() => deleteBookCard(bookProp.id)}>Remove</button>
-        <button type="button" className="btn-book-manage">Edit</button>
-      </div>
-    </div>
-    <div className="book-progress">
-      <div className="progress-complete">
-        <div className="img-container">
-          <div className="img-progress" />
+const BookCard = ({
+  id, category, title, author, progress, chapter,
+}) => {
+  const dispatch = useDispatch();
+
+  return (
+    <li className="book-item">
+      <div className="book-info-container">
+        <div className="book-info">
+          <h3 className="book-category">{category}</h3>
+          <h2>{title}</h2>
+          <span className="book-author">{author}</span>
         </div>
-
-        <div className="progress-percent">
-          <span>
-            {bookProp.progress}
-            %
-          </span>
-          <span>
-            Completed
-          </span>
+        <div className="book-manage-section">
+          <button type="button" className="btn-book-manage">Comments</button>
+          <button type="button" className="btn-book-manage" onClick={() => dispatch(removeBook(id))}>Remove</button>
+          <button type="button" className="btn-book-manage">Edit</button>
         </div>
       </div>
-      <div className="book-chapter">
-        <span>CURRENT CHAPTER</span>
-        <span>{bookProp.chapter}</span>
-        <button type="button" className="btn-update-progress">UPDATE PROGRESS</button>
-      </div>
-    </div>
+      <div className="book-progress">
+        <div className="progress-complete">
+          <div className="img-container">
+            <div className="img-progress" />
+          </div>
 
-  </li>
-);
+          <div className="progress-percent">
+            <span>
+              {progress}
+              %
+            </span>
+            <span>
+              Completed
+            </span>
+          </div>
+        </div>
+        <div className="book-chapter">
+          <span>CURRENT CHAPTER</span>
+          <span>{chapter}</span>
+          <button type="button" className="btn-update-progress">UPDATE PROGRESS</button>
+        </div>
+      </div>
+
+    </li>
+  );
+};
 
 BookCard.propTypes = {
-  bookProp: PropTypes.shape({
-    category: PropTypes.string.isRequired,
-    title: PropTypes.string.isRequired,
-    author: PropTypes.string.isRequired,
-    id: PropTypes.number.isRequired,
-    progress: PropTypes.number.isRequired,
-    chapter: PropTypes.string.isRequired,
-  }).isRequired,
-  deleteBookCard: PropTypes.func.isRequired,
+  id: PropTypes.string.isRequired,
+  category: PropTypes.string.isRequired,
+  title: PropTypes.string.isRequired,
+  author: PropTypes.string.isRequired,
+  progress: PropTypes.number.isRequired,
+  chapter: PropTypes.string.isRequired,
 };
 
 export default BookCard;
