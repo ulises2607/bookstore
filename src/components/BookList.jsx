@@ -9,13 +9,11 @@ const BookList = () => {
     <ul>
       {bookItems.map((item) => (
         <BookCard
-          key={item.id}
-          id={item.id}
+          key={item.item_id}
+          id={item.item_id}
           category={item.category}
           title={item.title}
           author={item.author}
-          progress={item.progress}
-          chapter={item.chapter}
         />
       ))}
     </ul>

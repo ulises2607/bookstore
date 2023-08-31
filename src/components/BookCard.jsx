@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import { removeBook } from '../redux/books/booksSlice';
 
 const BookCard = ({
-  id, category, title, author, progress, chapter,
+  id, category, title, author,
 }) => {
   const dispatch = useDispatch();
 
@@ -30,7 +30,7 @@ const BookCard = ({
 
           <div className="progress-percent">
             <span>
-              {progress}
+              0
               %
             </span>
             <span>
@@ -40,7 +40,7 @@ const BookCard = ({
         </div>
         <div className="book-chapter">
           <span>CURRENT CHAPTER</span>
-          <span>{chapter}</span>
+          <span>Chapter:</span>
           <button type="button" className="btn-update-progress">UPDATE PROGRESS</button>
         </div>
       </div>
@@ -54,8 +54,6 @@ BookCard.propTypes = {
   category: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,
   author: PropTypes.string.isRequired,
-  progress: PropTypes.number.isRequired,
-  chapter: PropTypes.string.isRequired,
 };
 
 export default BookCard;
