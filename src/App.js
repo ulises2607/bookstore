@@ -2,6 +2,7 @@ import './App.css';
 import { Routes, Route, Link } from 'react-router-dom';
 import BooksLogic from './components/BooksLogic';
 import user from './Assets/Images/image.svg';
+import Categories from './components/Categories';
 
 function App() {
   return (
@@ -23,7 +24,7 @@ function App() {
       <section>
         <Routes>
           <Route path="/" element={<BooksLogic />} />
-          <Route path="/categories" element={<h1>Under Construction</h1>} />
+          <Route path="/categories" element={<Categories />} />
         </Routes>
       </section>
 

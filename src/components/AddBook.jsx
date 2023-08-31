@@ -1,19 +1,30 @@
 import { useState } from 'react';
 import '../styles/AddBook.css';
-import PropTypes from 'prop-types';
+import { useDispatch } from 'react-redux';
+import { v4 as uuidv4 } from 'uuid';
+import { addBook } from '../redux/books/booksSlice';
 
-const AddBok = ({ addBookCard }) => {
+const AddBok = () => {
+  const dispatch = useDispatch();
+
   const [title, setTitle] = useState('');
   const [category, setCategory] = useState('');
 
   const handleSubmit = (e) => {
     e.preventDefault();
+
+    const newBook = {
+      id: uuidv4(),
+      title,
+      category,
+      author: 'Author-example',
+      progress: 0,
+      chapter: '-',
+    };
+
     if (title.trim()) {
-      addBookCard(title, category);
+      dispatch(addBook(newBook));
       setTitle('');
-      console.log('Added correctly, book; ', title);
-    } else {
-      console.log('Please add item');
     }
   };
 
@@ -56,10 +67,6 @@ const AddBok = ({ addBookCard }) => {
     </>
 
   );
-};
-
-AddBok.propTypes = {
-  addBookCard: PropTypes.func.isRequired,
 };
 
 export default AddBok;
