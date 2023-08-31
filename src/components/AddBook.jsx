@@ -25,9 +25,6 @@ const AddBok = () => {
     if (title.trim()) {
       dispatch(addBook(newBook));
       setTitle('');
-      console.log('Added correctly, book; ', title);
-    } else {
-      console.log('Please add item');
     }
   };
 
@@ -37,7 +34,6 @@ const AddBok = () => {
 
   const handleChangeCategory = (e) => {
     setCategory(e.target.value);
-    console.log('Nueva categoria: ', category);
   };
 
   return (
