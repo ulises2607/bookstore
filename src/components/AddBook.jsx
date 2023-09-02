@@ -2,7 +2,8 @@ import { useState } from 'react';
 import '../styles/AddBook.css';
 import { useDispatch } from 'react-redux';
 import { v4 as uuidv4 } from 'uuid';
-import { addBook } from '../redux/books/booksSlice';
+import { addBook, updateBooks } from '../redux/books/booksSlice';
+import axios from 'axios';
 
 const AddBok = () => {
   const dispatch = useDispatch();
@@ -10,11 +11,11 @@ const AddBok = () => {
   const [title, setTitle] = useState('');
   const [category, setCategory] = useState('Action');
 
-  const handleSubmit = (e) => {
+  const handleSubmit =async (e) => {
     e.preventDefault();
 
     const newBook = {
-      id: uuidv4(),
+      item_id: uuidv4(),
       title,
       category,
       author: 'Author-example',
@@ -24,6 +25,7 @@ const AddBok = () => {
       dispatch(addBook(newBook));
       setTitle('');
     }
+    
   };
 
   const handleChange = (e) => {
