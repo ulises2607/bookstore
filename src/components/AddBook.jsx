@@ -2,8 +2,7 @@ import { useState } from 'react';
 import '../styles/AddBook.css';
 import { useDispatch } from 'react-redux';
 import { v4 as uuidv4 } from 'uuid';
-import { addBook, updateBooks } from '../redux/books/booksSlice';
-import axios from 'axios';
+import { addBook } from '../redux/books/booksSlice';
 
 const AddBok = () => {
   const dispatch = useDispatch();
@@ -11,7 +10,7 @@ const AddBok = () => {
   const [title, setTitle] = useState('');
   const [category, setCategory] = useState('Action');
 
-  const handleSubmit =async (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
 
     const newBook = {
@@ -25,7 +24,6 @@ const AddBok = () => {
       dispatch(addBook(newBook));
       setTitle('');
     }
-    
   };
 
   const handleChange = (e) => {

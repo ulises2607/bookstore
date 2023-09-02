@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import { removeBook } from '../redux/books/booksSlice';
 
 const BookCard = ({
-  item_id, category, title, author,
+  itemId, category, title, author,
 }) => {
   const dispatch = useDispatch();
 
@@ -18,7 +18,7 @@ const BookCard = ({
         </div>
         <div className="book-manage-section">
           <button type="button" className="btn-book-manage">Comments</button>
-          <button type="button" className="btn-book-manage" onClick={() => dispatch(removeBook(item_id))}>Remove</button>
+          <button type="button" className="btn-book-manage" onClick={() => dispatch(removeBook(itemId))}>Remove</button>
           <button type="button" className="btn-book-manage">Edit</button>
         </div>
       </div>
@@ -50,7 +50,7 @@ const BookCard = ({
 };
 
 BookCard.propTypes = {
-  item_id: PropTypes.string.isRequired,
+  itemId: PropTypes.string.isRequired,
   category: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,
   author: PropTypes.string.isRequired,
