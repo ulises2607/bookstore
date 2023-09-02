@@ -1,5 +1,7 @@
 import './App.css';
-import { Routes, Route, Link, useLocation } from 'react-router-dom';
+import {
+  Routes, Route, Link, useLocation,
+} from 'react-router-dom';
 import BooksLogic from './components/BooksLogic';
 import Categories from './components/Categories';
 import UserIcon from './Assets/Images/userIcon';
@@ -11,7 +13,7 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <div className='main'>
+        <div className="main">
           <h1 className="page-title">Bookstore CMS</h1>
           <nav>
             <ul className="nav-list">
