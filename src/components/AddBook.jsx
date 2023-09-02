@@ -10,11 +10,11 @@ const AddBok = () => {
   const [title, setTitle] = useState('');
   const [category, setCategory] = useState('Action');
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
 
     const newBook = {
-      id: uuidv4(),
+      item_id: uuidv4(),
       title,
       category,
       author: 'Author-example',
