@@ -18,7 +18,9 @@ const BookCard = ({
         </div>
         <div className="book-manage-section">
           <button type="button" className="btn-book-manage">Comments</button>
+          <div className="vertical-divider" />
           <button type="button" className="btn-book-manage" onClick={() => dispatch(removeBook(itemId))}>Remove</button>
+          <div className="vertical-divider" />
           <button type="button" className="btn-book-manage">Edit</button>
         </div>
       </div>
@@ -37,6 +39,7 @@ const BookCard = ({
               Completed
             </span>
           </div>
+          <div className="progress-divider" />
         </div>
         <div className="book-chapter">
           <span>CURRENT CHAPTER</span>
