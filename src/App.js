@@ -1,23 +1,28 @@
 import './App.css';
-import { Routes, Route, Link } from 'react-router-dom';
+import { Routes, Route, Link, useLocation } from 'react-router-dom';
 import BooksLogic from './components/BooksLogic';
-import user from './Assets/Images/image.svg';
 import Categories from './components/Categories';
+import UserIcon from './Assets/Images/userIcon';
 
 function App() {
+  const location = useLocation();
+  const isBooksSection = location.pathname === '/';
+  const isCategoriesSection = location.pathname === '/categories';
   return (
     <div className="App">
       <header className="App-header">
-        <h1 className="page-title">Bookstore CMS</h1>
-        <nav>
-          <ul className="nav-list">
-            <li className="nav-item"><Link to="/">BOOKS</Link></li>
-            <li className="nav-item"><Link to="/categories">CATEGORIES</Link></li>
-          </ul>
-        </nav>
+        <div className='main'>
+          <h1 className="page-title">Bookstore CMS</h1>
+          <nav>
+            <ul className="nav-list">
+              <li className="nav-item"><Link to="/" className={isBooksSection ? 'bold' : ''}>BOOKS</Link></li>
+              <li className="nav-item"><Link to="/categories" className={isCategoriesSection ? 'bold' : ''}>CATEGORIES</Link></li>
+            </ul>
+          </nav>
+        </div>
         <div className="user">
           <button type="button" className="btn-user">
-            <img className="user-icon" src={user} alt="User Icon" />
+            <UserIcon />
           </button>
         </div>
       </header>

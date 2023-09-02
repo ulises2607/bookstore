@@ -47,11 +47,11 @@ const AddBok = () => {
             className="input-book"
           />
           <select className="category-input" onChange={handleChangeCategory}>
-            <option value="action">Action</option>
+            <option value="Action">Action</option>
 
-            <option value="science-fiction">Science Fiction</option>
+            <option value="Science Fiction">Science Fiction</option>
 
-            <option value="economy">Economy</option>
+            <option value="Economy">Economy</option>
           </select>
           <button
             type="submit"

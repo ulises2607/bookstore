@@ -9,8 +9,9 @@
 header {
   display: flex;
   align-items: center;
+  justify-content: space-between;
   gap: 1rem;
-  padding: 1rem;
+  padding: 1rem 2rem 1rem 2rem;
   background-color: #fff;
 }
 
@@ -32,23 +33,43 @@ header {
   }
 }
 
+.main {
+  display: flex;
+  align-items: center;
+  gap: 4rem;
+}
+
 .btn-user {
   cursor: pointer;
-  width: 2rem;
-  height: 2.813rem;
+  width: 3rem;
+  height: 3rem;
   border-radius: 50%;
   border: 1px solid #e8e8e8;
   background-color: #fff;
-  position: absolute;
-  right: 10%;
-  top: 20%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.user-icon {
-  color: #0290ff;
+.h-6 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 1.5rem;
+}
+
+.horizontal-divider {
+  height: 0.125rem;
+  background-color: #e8e8e8;
+  width: 100%;
+  margin: 2.5rem 0 1.813rem;
 }
 
 section {
   padding: 1rem;
   background-color: #fafafa;
+}
+
+.bold {
+  color: black;
 }

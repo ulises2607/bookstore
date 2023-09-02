@@ -6,6 +6,7 @@ const BooksLogic = () => (
     <div>
       <BookList />
     </div>
+    <div className='horizontal-divider'></div>
     <div className="addbook-section">
       <AddBok />
     </div>
