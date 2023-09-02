@@ -17,14 +17,9 @@ export const fetchBooks = createAsyncThunk('books/fetchBooks', async () => {
 const deleteBook = async (bookId) => {
   try {
     const response = await axios.delete(`https://us-central1-bookstore-api-e63c8.cloudfunctions.net/bookstoreApi/apps/${API_KEY}/books/${bookId}`);
-    console.log(response.status);
-    if (response.status === 201) {
-      console.log('Libro eliminado con éxito');
-    } else {
-      console.log('Error al eliminar el libro');
-    }
+    return response.status;
   } catch (error) {
-    console.log('Error al eliminar el libro - API:', error);
+    return null;
   }
 };
 
@@ -33,8 +28,7 @@ const postBook = async (book) => {
     const response = await axios.post('https://us-central1-bookstore-api-e63c8.cloudfunctions.net/bookstoreApi/apps/blo2c7dGSCASUaEsRn44/books', book);
     return response.status;
   } catch (error) {
-    console.error('Error al agregar el libro en la API', error);
-    return null; // Agrega esta línea
+    return null;
   }
 };
 
@@ -51,7 +45,6 @@ const booksSlice = createSlice({
       const bookId = action.payload;
       deleteBook(bookId);
       state.bookItems = state.bookItems.filter((item) => item.itemId !== bookId);
-      console.log(bookId);
     },
   },
   extraReducers: (builder) => {
@@ -67,8 +60,6 @@ const booksSlice = createSlice({
           ...dataFromAPI[itemId][0],
         }));
         state.bookItems = updatedBookItems;
-        console.log('UpdatedBookItems: ', updatedBookItems);
-        console.log('state: ', state.bookItems);
         state.loading = false;
       })
       .addCase(fetchBooks.rejected, (state, action) => {
